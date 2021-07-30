@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import { Grid, Keyboard, ResponsiveContext } from 'grommet';
+import { Grid, Box, Keyboard, ResponsiveContext } from 'grommet';
 import DesignContext from './DesignContext';
 import ErrorCatcher from './ErrorCatcher';
 import Canvas from './Canvas';
@@ -323,22 +323,25 @@ const Designer = ({ design, chooseDesign, updateDesign }) => {
   return (
     <DesignContext.Provider value={designContext}>
       <Keyboard target="document" onKeyDown={onKey}>
-        <Grid fill columns={columns} rows="full">
+        <Grid style={{display: 'flex'}} fill columns={columns} rows="full">
           {responsive !== 'small' && mode === 'edit' && <Tree />}
 
           <ErrorCatcher>
             <Canvas />
           </ErrorCatcher>
 
-          {responsive !== 'small' &&
-            mode !== 'preview' &&
-            (mode === 'comments' ? (
-              <Comments />
-            ) : selectedComponent ? (
-              <Properties />
-            ) : selected.screen ? (
-              <ScreenDetails />
-            ) : null)}
+          <Box>
+            {responsive !== 'small' &&
+              mode !== 'preview' &&
+              (mode === 'comments' ? (
+                <Comments />
+              ) : selectedComponent ? (
+                <Properties />
+              ) : selected.screen ? (
+                <ScreenDetails />
+              ) : null)}
+          </Box>
+
           {confirmReplace && (
             <ConfirmReplace
               design={design}

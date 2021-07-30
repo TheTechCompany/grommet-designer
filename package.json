@@ -3,10 +3,12 @@
   "version": "0.2.0",
   "private": true,
   "dependencies": {
+    "@tauri-apps/api": "^1.0.0-beta.5",
     "lz-string": "^1.4.4",
     "react-ga": "^3.2.0"
   },
   "scripts": {
+    "tauri": "tauri",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "lint": "eslint './src/**/*.js'",
@@ -35,6 +37,7 @@
     ]
   },
   "devDependencies": {
+    "@tauri-apps/cli": "^1.0.0-beta.6",
     "@testing-library/react": "^12.0.0",
     "copy-webpack-plugin": "^6.3.2",
     "customize-cra": "^1.0.0",
