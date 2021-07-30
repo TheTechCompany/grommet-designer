@@ -275,7 +275,13 @@ const Tree = () => {
     <Keyboard target="document" onKeyDown={onKey}>
       <TreeContext.Provider value={treeContext}>
         <DragDropContext.Provider value={dragDropContext}>
-          <Box ref={treeRef} width="20vw" fill="vertical" overflow="auto" border="right">
+          <Box
+            ref={treeRef}
+            width="20vw"
+            fill="vertical"
+            overflow="auto"
+            border="right"
+          >
             <Header />
 
             <Box flex overflow="auto">

@@ -323,7 +323,7 @@ const Designer = ({ design, chooseDesign, updateDesign }) => {
   return (
     <DesignContext.Provider value={designContext}>
       <Keyboard target="document" onKeyDown={onKey}>
-        <Grid style={{display: 'flex'}} fill columns={columns} rows="full">
+        <Grid style={{ display: 'flex' }} fill columns={columns} rows="full">
           {responsive !== 'small' && mode === 'edit' && <Tree />}
 
           <ErrorCatcher>
